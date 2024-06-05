@@ -35,5 +35,5 @@ npm run dev
 4. Open your browser and navigate to http://localhost:5173.
 
 
-## Deploy on Vercel
+## Deploy on Git
 

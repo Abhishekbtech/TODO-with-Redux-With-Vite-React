@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { removeTodo, editTodo } from '../Reducer/TodoSlice'
 
@@ -10,11 +10,19 @@ function Todo() {
     const [editingId, setEditingId] = useState(null);
     const [editingText, setEditingText] = useState('');
 
+    /**
+   * Handle edit click on a todo item.
+   * Set the editingId to the todo's id and editingText to the todo's text.
+   */
     const handleEditClick = (todo) => {
         setEditingId(todo.id);
         setEditingText(todo.text);
     };
 
+    /**
+   * Handle save click on a todo item.
+   * Dispatch the editTodo action with the updated text and reset the editingId.
+   */
     const handleSaveClick = (id) => {
         dispatch(editTodo({ id, text: editingText }));
         setEditingId(null);
@@ -30,6 +38,7 @@ function Todo() {
                         key={todo.id}
                     >
                         <div className='text-white'>
+                            {/* Display the todo text or an input field if it's being edited */}
                             {editingId === todo.id ? (
                                 <input
                                     type="text"
@@ -42,6 +51,7 @@ function Todo() {
                             )}
                         </div>
                         <div className="flex space-x-2">
+                            {/* Display the edit or save button depending on the editing state */}
                             {editingId === todo.id ? (
                                 <button
                                     onClick={() => handleSaveClick(todo.id)}
@@ -57,6 +67,7 @@ function Todo() {
                                     Edit
                                 </button>
                             )}
+                            {/* Delete button */}
                             <button
                                 onClick={() => dispatch(removeTodo(todo.id))}
                                 className="text-white bg-red-500 border-0 py-1 px-4 focus:outline-none hover:bg-red-600 rounded text-md"
