@@ -18,8 +18,8 @@ Build a simple React To-Do application that allows users to add, view, and delet
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/Abhishekbtech/Abhishek-Chauhan_Next.js-Weather-App.git
-cd weather-app
+git clone https://github.com/Abhishekbtech/TODO-with-Redux-With-Vite-React.git
+cd todo-with-redux
 ```
 
 2. Install dependencies:
@@ -32,9 +32,8 @@ npm install
 npm run dev
 ```
 
-4. Open your browser and navigate to http://localhost:3000.
+4. Open your browser and navigate to http://localhost:5173.
 
 
 ## Deploy on Vercel
 
-Deployment link of my project https://abhishek-chauhan-next-js-weather-app.vercel.app/
